@@ -10,10 +10,13 @@ public class CounterJobBehaviourT : MonoBehaviour
         public int result;
         public void Execute()
         {
+            var temp = 0;
             for (int i = 0; i < numbers.Length; i++)
             {
-                result = numbers[i];
+                temp += numbers[i];
+                Debug.Log(temp);
             }
+            result = temp;
         }
     }
 
@@ -28,7 +31,7 @@ public class CounterJobBehaviourT : MonoBehaviour
         var jobData = new CounterJob
         {
             numbers = numbers,
-            result = 0
+            result = 10
         };
 
         var handle = jobData.Schedule();
