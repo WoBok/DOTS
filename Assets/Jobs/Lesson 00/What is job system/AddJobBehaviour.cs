@@ -22,9 +22,9 @@ public class AddJobBehaviour : MonoBehaviour
         result = new NativeArray<float>(1, Allocator.Persistent);
         var job = new AddJobs { a = 1, b = 2, result = result };
         jobHandle = job.Schedule();
-        jobHandle.Complete();
-        Debug.Log(result[0]);
-        Debug.Log("123");
+        //jobHandle.Complete();
+        //Debug.Log(result[0]);
+        //Debug.Log("123");
     }
     void Update()
     {

@@ -15,7 +15,7 @@ namespace Jobs.DOD
             [ReadOnly] public float elapsedTime;
             public void Execute(int index, TransformAccess transform)
             {
-                var distance = Vector3.Distance(transform.position, Vector3.zero);
+                var distance = math.length(transform.position);
                 transform.localPosition += Vector3.up * math.sin(3 * elapsedTime + 0.2f * distance);
             }
         }

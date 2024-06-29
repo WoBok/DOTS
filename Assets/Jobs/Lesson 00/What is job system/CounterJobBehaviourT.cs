@@ -1,4 +1,5 @@
 using Unity.Collections;
+using Unity.Collections.LowLevel.Unsafe;
 using Unity.Jobs;
 using UnityEngine;
 
@@ -36,7 +37,11 @@ public class CounterJobBehaviourT : MonoBehaviour
 
         var handle = jobData.Schedule();
         handle.Complete();
-        Debug.Log(jobData.result);
+        Debug.Log("result: " + jobData.result);
+        for (int i = 0; i < jobData.numbers.Length; i++)
+        {
+            Debug.Log("jobData.numbers" + jobData.numbers[i]);
+        }
         numbers.Dispose();
     }
     //我们再来看回顾一下Job的特点：
