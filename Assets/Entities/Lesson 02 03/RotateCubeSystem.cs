@@ -3,6 +3,7 @@ using Unity.Entities;
 using Unity.Transforms;
 
 [UpdateInGroup(typeof(RotateCubeSystemGroup))]
+//[UpdateBefore(typeof())]
 [BurstCompile]
 public partial struct RotateCubeSystem : ISystem
 {
