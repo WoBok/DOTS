@@ -2,6 +2,7 @@ using Unity.Burst;
 using Unity.Entities;
 using Unity.Transforms;
 
+[DisableAutoCreation]
 [UpdateInGroup(typeof(Lesson04SystemGroup))]
 [BurstCompile]
 public partial struct BlueRotateCubeSystem : ISystem

@@ -703,7 +703,8 @@ PlayerSettings:
   webGLWebAssemblyBigInt: 0
   webGLCloseOnQuit: 0
   webWasm2023: 0
-  scriptingDefineSymbols: {}
+  scriptingDefineSymbols:
+    Standalone: DOTS_OUTPUT_SOURCEGEN_FILES
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend:

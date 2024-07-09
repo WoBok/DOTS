@@ -17,6 +17,7 @@ struct CubeRotateJobChunk : IJobChunk
         var chunkRotationSpeeds = chunk.GetNativeArray(ref rotationSpeedTypeHandle);
 
         //枚举器和for循环两者选其一
+        //根据Mask过滤掉被禁用的Entity
         var enumerator = new ChunkEntityEnumerator(useEnabledMask, chunkEnabledMask, chunk.Count);
         while (enumerator.NextEntityIndex(out var i))
         {
@@ -32,6 +33,7 @@ struct CubeRotateJobChunk : IJobChunk
     }
 }
 
+[DisableAutoCreation]
 [BurstCompile]
 [UpdateInGroup(typeof(Lesson05SystemGroup))]
 public partial struct CubeRotateJobChunkSystem : ISystem
@@ -62,6 +64,7 @@ public partial struct CubeRotateJobChunkSystem : ISystem
             transformTypeHandle = transformTypeHandle,
             rotationSpeedTypeHandle = rotationSpeedTypeHandle
         };
+        //需传入依赖项的jobHandle(state.Dependency)并返回IJobChunk的输入依赖项，以确保辅助Job在主Job之前完成
         state.Dependency = job.ScheduleParallel(rotateCubes, state.Dependency);
     }
 }
