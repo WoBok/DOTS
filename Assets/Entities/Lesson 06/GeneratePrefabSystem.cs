@@ -29,7 +29,7 @@ partial struct GeneratePrefabSystem : ISystem
                 rotateSpeed = (count + 1) * math.radians(90),
                 moveSpeed = (count + 1)
             };
-            state.EntityManager.AddComponentData<MoveAndRotateComponent>(entity, moveAndRotateComponent);
+            state.EntityManager.AddComponentData(entity, moveAndRotateComponent);
 
             var position = new float3((count - generator.count / 2) * 1.2f, 0, 0);
             var transform = SystemAPI.GetComponentRW<LocalTransform>(entity);
