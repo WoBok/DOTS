@@ -3,12 +3,12 @@ using UnityEngine;
 
 namespace Entity_Lesson07
 {
-    class Generator : MonoBehaviour
+    public class Generator : Singleton<Generator>
     {
         public GameObject prefab;
         public int totalNum;
         public int perTickTimeNum;
-        public int tickTime;
+        public float tickTime;
         public bool isUseParallel;
     }
 
