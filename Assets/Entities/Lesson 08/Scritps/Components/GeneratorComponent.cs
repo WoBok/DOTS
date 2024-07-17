@@ -1,6 +1,6 @@
 using Unity.Entities;
 
-namespace Entity_Lesson07
+namespace Entity_Lesson08
 {
     public struct GeneratorComponent : IComponentData
     {

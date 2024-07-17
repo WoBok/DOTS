@@ -5,20 +5,20 @@ public struct RandomComponent : IComponentData
 {
     public Random random;
 }
-
 public class RandomSingleton : Singleton<RandomSingleton>
 {
     public uint seed = 1;
-    public class Baker : Baker<RandomSingleton>
+
+}
+class Baker : Baker<RandomSingleton>
+{
+    public override void Bake(RandomSingleton authoring)
     {
-        public override void Bake(RandomSingleton authoring)
+        var entity = GetEntity(TransformUsageFlags.None);
+        var data = new RandomComponent
         {
-            var entity = GetEntity(TransformUsageFlags.None);
-            var data = new RandomComponent
-            {
-                random = new Random(Instance.seed)
-            };
-            AddComponent(entity, data);
-        }
+            random = new Random(authoring.seed)
+        };
+        AddComponent(entity, data);
     }
 }

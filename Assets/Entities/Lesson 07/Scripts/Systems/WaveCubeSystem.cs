@@ -5,6 +5,7 @@ using Unity.Profiling;
 [BurstCompile]
 [RequireMatchingQueriesForUpdate]
 [UpdateInGroup(typeof(Lesson07SystemGroup))]
+[UpdateBefore(typeof(GenerateCubeSystem))]
 partial struct WaveCubeSystem : ISystem
 {
     static readonly ProfilerMarker profilerMarker = new ProfilerMarker("WaveCubeJobEntity");

@@ -2,7 +2,7 @@ using Unity.Burst;
 using Unity.Entities;
 using Unity.Transforms;
 
-[DisableAutoCreation]
+//[DisableAutoCreation]
 [UpdateInGroup(typeof(RotateCubeSystemGroup))]
 //[UpdateBefore(typeof())]
 [BurstCompile]

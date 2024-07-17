@@ -2,14 +2,21 @@ using Unity.Burst;
 using Unity.Collections;
 using Unity.Entities;
 using Unity.Jobs;
-using UnityEngine;
 
-namespace Entity_Lesson07
+namespace Entity_Lesson08
 {
     partial struct GeneratorSystem : ISystem
     {
         float timer;
         int totalEntitys;
+
+        [BurstCompile]
+        public void OnCreate(ref SystemState state)
+        {
+            state.RequireForUpdate<GeneratorComponent>();
+            //state.RequireForUpdate<RandomComponent>();
+        }
+
         [BurstCompile]
         public void OnUpdate(ref SystemState state)
         {
@@ -28,12 +35,20 @@ namespace Entity_Lesson07
         }
         void GenerateEntityJob(ref SystemState state, GeneratorComponent generatorComponent)
         {
-            //RefRW<RandomComponent> random = SystemAPI.GetSingletonRW<RandomComponent>();
+            RefRW<RandomComponent> random = SystemAPI.GetSingletonRW<RandomComponent>();
             EntityCommandBuffer ecb = new EntityCommandBuffer(Allocator.TempJob);
             var entityArray = CollectionHelper.CreateNativeArray<Entity>(generatorComponent.perTickTimeNum, Allocator.TempJob);
             if (generatorComponent.isUseParallel)
             {
-                Debug.Log("Uncompleted...");
+                EntityCommandBuffer.ParallelWriter parallelWriter = ecb.AsParallelWriter();
+                var job = new GeneratorWithParallelWriterJob
+                {
+                    prefab = generatorComponent.prefab,
+                    entities = entityArray,
+                    parallelWriter = parallelWriter,
+                    random = random
+                };
+                state.Dependency = job.ScheduleParallel(entityArray.Length, 1, state.Dependency);
             }
             else
             {
@@ -41,13 +56,14 @@ namespace Entity_Lesson07
                 {
                     prefab = generatorComponent.prefab,
                     entities = entityArray,
-                    ecb = ecb
-                    //random = random
+                    ecb = ecb,
+                    random = random
                 };
                 state.Dependency = job.Schedule(entityArray.Length, state.Dependency);
             }
             state.Dependency.Complete();
             ecb.Playback(state.EntityManager);
+            totalEntitys += generatorComponent.perTickTimeNum;
             entityArray.Dispose();
             ecb.Dispose();
         }

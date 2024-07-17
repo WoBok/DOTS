@@ -1,7 +1,7 @@
 using Unity.Entities;
 using UnityEngine;
 
-namespace Entity_Lesson07
+namespace Entity_Lesson08
 {
     public class Generator : Singleton<Generator>
     {
@@ -16,14 +16,15 @@ namespace Entity_Lesson07
     {
         public override void Bake(Generator authoring)
         {
-            if (authoring.isUseParallel)
-            {
-                authoring.prefab.GetComponent<Renderer>().material.SetColor("_BaseColor", Color.red);
-            }
-            else
-            {
-                authoring.prefab.GetComponent<Renderer>().material.SetColor("_BaseColor", Color.green);
-            }
+            //if (authoring.isUseParallel)
+            //{
+            //    authoring.prefab.GetComponent<MeshRenderer>().material.SetColor("_BaseColor", Color.red);
+            //}
+            //else
+            //{
+            //    var renderer = authoring.prefab.GetComponent<MeshRenderer>();
+            //    renderer.material.SetColor("_BaseColor", Color.green);
+            //}
 
             var entity = GetEntity(TransformUsageFlags.None);
 
