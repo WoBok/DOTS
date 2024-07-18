@@ -5,6 +5,7 @@ using Unity.Jobs;
 
 namespace Entity_Lesson08
 {
+    [UpdateInGroup(typeof(Lesson08SystemGroup))]
     partial struct GeneratorSystem : ISystem
     {
         float timer;

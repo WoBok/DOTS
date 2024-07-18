@@ -3,6 +3,7 @@ using Unity.Entities;
 
 namespace Entity_Lesson08
 {
+    [UpdateInGroup(typeof(Lesson08SystemGroup))]
     [UpdateAfter(typeof(GeneratorSystem))]
     partial struct MoveAndRotateSystem : ISystem
     {
