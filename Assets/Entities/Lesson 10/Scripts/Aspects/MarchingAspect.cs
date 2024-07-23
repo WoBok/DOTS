@@ -4,7 +4,7 @@ using Unity.Transforms;
 
 namespace Entity_Lesson10
 {
-    readonly partial struct MarchingAspect : IAspect
+     readonly partial struct MarchingAspect : IAspect
     {
         readonly RefRW<LocalTransform> transform;
         readonly RefRO<MovementComponent> movementComponent;
