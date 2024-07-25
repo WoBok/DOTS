@@ -9,7 +9,6 @@ namespace Entity_Lesson10
         public int count;
         public int countOfTickTime;
         public float tickTime;
-        public Vector3 generationPosition;
         public Vector3 generationRange;
         public Vector3 targetPosition;
         public Vector3 targetRange;
@@ -28,7 +27,7 @@ namespace Entity_Lesson10
                 count = authoring.count,
                 countOfTickTime = authoring.countOfTickTime,
                 tickTime = authoring.tickTime,
-                generationPosition = authoring.generationPosition,
+                generationPosition = authoring.transform.position,
                 generationRange = authoring.generationRange,
                 targetPosition = authoring.targetPosition,
                 targetRange = authoring.targetRange,

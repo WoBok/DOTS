@@ -37,11 +37,12 @@ namespace Entity_Lesson10
                     state.EntityManager.AddComponentData(entity, new MovementComponent { movementSpeed = generator.movementSpeed });
                     var randomSingleton = SystemAPI.GetSingletonRW<RandomComponent>();
                     var targetRange = generator.targetRange;
-                    var randomPosition = randomSingleton.ValueRO.random.NextFloat3(-targetRange * 0.5f, targetRange * 0.5f);
-                    state.EntityManager.AddComponentData(entity, new RandomTargetComponent { targetPosition = randomPosition });
-                    //randomSingleton = SystemAPI.GetSingletonRW<RandomComponent>();
+                    var randomPosition = randomSingleton.ValueRW.random.NextFloat3(-targetRange * 0.5f, targetRange * 0.5f);
+                    var targetPosition = generator.targetPosition + new float3(randomPosition.x, 0, randomPosition.z);
+                    state.EntityManager.AddComponentData(entity, new RandomTargetComponent { targetPosition = targetPosition });
+                    randomSingleton = SystemAPI.GetSingletonRW<RandomComponent>();//??
                     var generationRange = generator.generationRange;
-                    randomPosition = randomSingleton.ValueRO.random.NextFloat3(-generationRange * 0.5f, generationRange * 0.5f);
+                    randomPosition = randomSingleton.ValueRW.random.NextFloat3(-generationRange * 0.5f, generationRange * 0.5f);
                     var generationPosition = generator.generationPosition + new float3(randomPosition.x, 0, randomPosition.z);
                     var transform = SystemAPI.GetComponentRW<LocalTransform>(entity);
                     transform.ValueRW.Position = generationPosition;
