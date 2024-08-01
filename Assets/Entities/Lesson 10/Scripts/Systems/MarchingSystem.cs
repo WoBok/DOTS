@@ -11,7 +11,7 @@ namespace Entity_Lesson10
     [UpdateInGroup(typeof(Lesson10SystemGroup))]
     partial struct MarchingSystem : ISystem
     {
-        //static readonly ProfilerMarker profilerMarker = new ProfilerMarker("CubesMarchWithEntity");
+        static readonly ProfilerMarker profilerMarker = new ProfilerMarker("CubesMarchWithEntity");
         EntityQuery entityQuery;
         ComponentTypeHandle<LocalTransform> transformTypeHandle;
         ComponentTypeHandle<RotationComponent> rotationComponentTypeHandle;
@@ -31,7 +31,7 @@ namespace Entity_Lesson10
         [BurstCompile]
         public void OnUpdate(ref SystemState state)
         {
-            //using (profilerMarker.Auto())
+            using (profilerMarker.Auto())
             {
                 var generator = SystemAPI.GetSingleton<GeneratorComponent>();
                 transformTypeHandle.Update(ref state);
