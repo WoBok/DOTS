@@ -7,6 +7,7 @@ public struct BufferElementComponent : IBufferElementData
     public float3 position;
     public float speed;
 }
+[UpdateInGroup(typeof(IBufferElementDataTestSystemGroup))]
 partial struct IBufferElementSystem : ISystem
 {
     Entity m_BufferElementEntity;
