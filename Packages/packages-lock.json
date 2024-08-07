@@ -271,6 +271,12 @@
       },
       "url": "https://packages.unity.cn"
     },
+    "com.wobok.plugins": {
+      "version": "file:E:/SDK/WoBok's Plugins",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {}
+    },
     "com.unity.modules.accessibility": {
       "version": "1.0.0",
       "depth": 0,
