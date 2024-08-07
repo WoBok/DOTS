@@ -14,11 +14,11 @@ namespace Entity_Lesson12
     {
         public override void Bake(Generator authoring)
         {
-            var meshRender = authoring.prefab.transform.GetComponentsInChildren<MeshRenderer>();
-            foreach (var mesh in meshRender)
-            {
-                mesh.sharedMaterial.color = new Color(Random.value, Random.value, Random.value);
-            }
+            //var meshRender = authoring.prefab.transform.GetComponentsInChildren<MeshRenderer>();
+            //foreach (var mesh in meshRender)
+            //{
+            //    mesh.sharedMaterial.color = new Color(Random.value, Random.value, Random.value);
+            //}
             var entity = GetEntity(TransformUsageFlags.None);
             var component = new GeneratorComponent
             {
@@ -27,6 +27,12 @@ namespace Entity_Lesson12
                 zCount = authoring.zCount
             };
             AddComponent(entity, component);
+            //var random = new Random();
+            //var colorComponent = new MaterialColorComponent
+            //{
+            //    color = new float4(random.NextFloat(), random.NextFloat(), random.NextFloat(), 1)
+            //};
+            //AddComponent(entity, colorComponent);
         }
     }
 }

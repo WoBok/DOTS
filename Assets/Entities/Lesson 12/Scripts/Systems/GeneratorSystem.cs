@@ -31,6 +31,7 @@ namespace Entity_Lesson12
 
                 var transform = SystemAPI.GetComponentRW<LocalTransform>(entity);
                 transform.ValueRW.Position = position;
+
                 count++;
             }
             entityArray.Dispose();
