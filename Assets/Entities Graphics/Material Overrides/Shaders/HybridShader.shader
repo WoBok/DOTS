@@ -33,10 +33,11 @@ Shader "URP Shader/HybridShader" {
             float4 _BaseMap_ST;
             half4 _Color;
             CBUFFER_END
+            half4 _ColorDOTS;
 
             #if defined(DOTS_INSTANCING_ON)
                 UNITY_DOTS_INSTANCING_START(MaterialPropertyMetadata)
-                UNITY_DOTS_INSTANCED_PROP_OVERRIDE_SUPPORTED(float4, _Color)
+                UNITY_DOTS_INSTANCED_PROP_OVERRIDE_SUPPORTED(float4, _ColorDOTS)
                 UNITY_DOTS_INSTANCING_END(MaterialPropertyMetadata)
                 #define UNITY_ACCESS_HYBRID_INSTANCED_PROP(var, type) UNITY_ACCESS_DOTS_INSTANCED_PROP_WITH_DEFAULT(type, var)
             #else
@@ -62,7 +63,11 @@ Shader "URP Shader/HybridShader" {
 
                 half4 diffuse = albedo * (dot(input.normalWS, normalize(_MainLightPosition.xyz)) * 0.5 + 0.5);
 
-                half4 color = UNITY_ACCESS_HYBRID_INSTANCED_PROP(_Color, float4);
+                #if defined(DOTS_INSTANCING_ON)
+                    half4 color = UNITY_ACCESS_HYBRID_INSTANCED_PROP(_ColorDOTS, float4);
+                #else
+                    half4 color = _Color;
+                #endif
 
                 return diffuse * color;
             }

@@ -4,7 +4,7 @@ using Unity.Rendering;
 
 namespace MaterialOverrides
 {
-    [MaterialProperty("_Color")]
+    [MaterialProperty("_ColorDOTS")]
     public struct MaterialColorComponent : IComponentData
     {
         public float4 color;
