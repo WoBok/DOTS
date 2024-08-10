@@ -1,3 +1,4 @@
+using Unity.Burst;
 using Unity.Entities;
 using Unity.Scenes;
 using UnityEngine;
@@ -12,11 +13,13 @@ namespace Entity_Lesson13
         float timer;
         Entity controllerEntity;
         Entity instanceEntity;
+        [BurstCompile]
         public void OnCreate(ref SystemState state)
         {
             state.RequireForUpdate<RespawnTimerComponent>();
             Debug.Log("OnCreate");
         }
+        [BurstCompile]
         public void OnUpdate(ref SystemState state)
         {
             if (!controllerEntity.Equals(default))
@@ -46,10 +49,12 @@ namespace Entity_Lesson13
             }
             Debug.Log("OnUpdate");
         }
+        [BurstCompile]
         public void OnDestroy(ref SystemState state)
         {
             Debug.Log("OnDestroy");
         }
+        [BurstCompile]
         public void OnStartRunning(ref SystemState state)
         {
             controllerEntity = default;
@@ -64,6 +69,7 @@ namespace Entity_Lesson13
             index = 1;
             Debug.Log("OnStartRunning");
         }
+        [BurstCompile]
         public void OnStopRunning(ref SystemState state)
         {
             if (!instanceEntity.Equals(default))
