@@ -6,7 +6,7 @@ using UnityEngine;
 namespace Entity_Lesson13
 {
     [RequireMatchingQueriesForUpdate]
-    [UpdateInGroup(typeof(Lesson13SystemGroup))]
+    [UpdateInGroup(typeof(Lesson13SystemGroup))]//只是不更新了，OnCreate还是会运行
     partial struct RespawnSystem : ISystem, ISystemStartStop
     {
         int index;
@@ -17,7 +17,7 @@ namespace Entity_Lesson13
         public void OnCreate(ref SystemState state)
         {
             state.RequireForUpdate<RespawnTimerComponent>();
-            Debug.Log("OnCreate");
+            //Debug.Log("OnCreate");//只是不更新了，OnCreate还是会运行
         }
         [BurstCompile]
         public void OnUpdate(ref SystemState state)
@@ -52,7 +52,7 @@ namespace Entity_Lesson13
         [BurstCompile]
         public void OnDestroy(ref SystemState state)
         {
-            Debug.Log("OnDestroy");
+            //Debug.Log("OnDestroy");
         }
         [BurstCompile]
         public void OnStartRunning(ref SystemState state)

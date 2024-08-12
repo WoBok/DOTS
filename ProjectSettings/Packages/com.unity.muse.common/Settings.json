@@ -1,0 +1,26 @@
+{
+    "m_Dictionary": {
+        "m_DictionaryValues": [
+            {
+                "type": "Unity.Muse.Common.PreferenceDataWrapper`1[[System.Collections.Generic.List`1[[Unity.Muse.Common.Account.OrganizationInfo, Unity.Muse.Common, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]",
+                "key": "Unity.Muse.Common.Preferences.organizations",
+                "value": "{\"value\":[{\"rid\":1000},{\"rid\":1001},{\"rid\":1002},{\"rid\":1003},{\"rid\":1004},{\"rid\":1005},{\"rid\":1006},{\"rid\":1007},{\"rid\":1008},{\"rid\":1009},{\"rid\":1010},{\"rid\":1011},{\"rid\":1012}],\"references\":{\"version\":2,\"RefIds\":[{\"rid\":1000,\"type\":{\"class\":\"OrganizationInfo\",\"ns\":\"Unity.Muse.Common.Account\",\"asm\":\"Unity.Muse.Common\"},\"data\":{\"org_id\":\"12370038550034\",\"org_name\":\"Futurist_WKC\",\"status\":\"free-trial\"}},{\"rid\":1001,\"type\":{\"class\":\"OrganizationInfo\",\"ns\":\"Unity.Muse.Common.Account\",\"asm\":\"Unity.Muse.Common\"},\"data\":{\"org_id\":\"33261934556878\",\"org_name\":\"BP14_LiQingZhaoProject\",\"status\":\"not-entitled\"}},{\"rid\":1002,\"type\":{\"class\":\"OrganizationInfo\",\"ns\":\"Unity.Muse.Common.Account\",\"asm\":\"Unity.Muse.Common\"},\"data\":{\"org_id\":\"33262070891576\",\"org_name\":\"BP15_BeachCombingProject\",\"status\":\"not-entitled\"}},{\"rid\":1003,\"type\":{\"class\":\"OrganizationInfo\",\"ns\":\"Unity.Muse.Common.Account\",\"asm\":\"Unity.Muse.Common\"},\"data\":{\"org_id\":\"33261417785879\",\"org_name\":\"ChinaUnicomExhibitionProject\",\"status\":\"not-entitled\"}},{\"rid\":1004,\"type\":{\"class\":\"OrganizationInfo\",\"ns\":\"Unity.Muse.Common.Account\",\"asm\":\"Unity.Muse.Common\"},\"data\":{\"org_id\":\"33261314451252\",\"org_name\":\"HuangSiPuProject\",\"status\":\"not-entitled\"}},{\"rid\":1005,\"type\":{\"class\":\"OrganizationInfo\",\"ns\":\"Unity.Muse.Common.Account\",\"asm\":\"Unity.Muse.Common\"},\"data\":{\"org_id\":\"33261453653445\",\"org_name\":\"InfinityLiangProject\",\"status\":\"not-entitled\"}},{\"rid\":1006,\"type\":{\"class\":\"OrganizationInfo\",\"ns\":\"Unity.Muse.Common.Account\",\"asm\":\"Unity.Muse.Common\"},\"data\":{\"org_id\":\"12369549456956\",\"org_name\":\"marlon1123\",\"status\":\"not-entitled\"}},{\"rid\":1007,\"type\":{\"class\":\"OrganizationInfo\",\"ns\":\"Unity.Muse.Common.Account\",\"asm\":\"Unity.Muse.Common\"},\"data\":{\"org_id\":\"33261704016750\",\"org_name\":\"MeetOceanProject\",\"status\":\"not-entitled\"}},{\"rid\":1008,\"type\":{\"class\":\"OrganizationInfo\",\"ns\":\"Unity.Muse.Common.Account\",\"asm\":\"Unity.Muse.Common\"},\"data\":{\"org_id\":\"33261851164151\",\"org_name\":\"OceanTrainProject\",\"status\":\"not-entitled\"}},{\"rid\":1009,\"type\":{\"class\":\"OrganizationInfo\",\"ns\":\"Unity.Muse.Common.Account\",\"asm\":\"Unity.Muse.Common\"},\"data\":{\"org_id\":\"33261189812372\",\"org_name\":\"SakuraLakeProject\",\"status\":\"not-entitled\"}},{\"rid\":1010,\"type\":{\"class\":\"OrganizationInfo\",\"ns\":\"Unity.Muse.Common.Account\",\"asm\":\"Unity.Muse.Common\"},\"data\":{\"org_id\":\"33262187743428\",\"org_name\":\"TjDevopsTest\",\"status\":\"not-entitled\"}},{\"rid\":1011,\"type\":{\"class\":\"OrganizationInfo\",\"ns\":\"Unity.Muse.Common.Account\",\"asm\":\"Unity.Muse.Common\"},\"data\":{\"org_id\":\"2535718\",\"org_name\":\"xiaomenggege\",\"status\":\"not-entitled\"}},{\"rid\":1012,\"type\":{\"class\":\"OrganizationInfo\",\"ns\":\"Unity.Muse.Common.Account\",\"asm\":\"Unity.Muse.Common\"},\"data\":{\"org_id\":\"12370048869824\",\"org_name\":\"歌尔创客（威海）数字创意科技有限公司\",\"status\":\"not-entitled\"}}]}}"
+            },
+            {
+                "type": "Unity.Muse.Common.PreferenceDataWrapper`1[[Unity.Muse.Common.Account.OrganizationInfo, Unity.Muse.Common, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+                "key": "Unity.Muse.Common.Preferences.organization",
+                "value": "{\"value\":{\"rid\":1000},\"references\":{\"version\":2,\"RefIds\":[{\"rid\":1000,\"type\":{\"class\":\"OrganizationInfo\",\"ns\":\"Unity.Muse.Common.Account\",\"asm\":\"Unity.Muse.Common\"},\"data\":{\"org_id\":\"12370038550034\",\"org_name\":\"Futurist_WKC\",\"status\":\"free-trial\"}}]}}"
+            },
+            {
+                "type": "Unity.Muse.Common.PreferenceDataWrapper`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]",
+                "key": "Unity.Muse.Common.Preferences.onboardingShown",
+                "value": "{\"value\":true}"
+            },
+            {
+                "type": "Unity.Muse.Common.PreferenceDataWrapper`1[[Unity.Muse.Common.Account.UsageInfo, Unity.Muse.Common, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+                "key": "Unity.Muse.Common.Preferences.usage",
+                "value": "{\"value\":{\"rid\":1000},\"references\":{\"version\":2,\"RefIds\":[{\"rid\":1000,\"type\":{\"class\":\"UsageInfo\",\"ns\":\"Unity.Muse.Common.Account\",\"asm\":\"Unity.Muse.Common\"},\"data\":{\"used\":50,\"total\":1000}}]}}"
+            }
+        ]
+    }
+}

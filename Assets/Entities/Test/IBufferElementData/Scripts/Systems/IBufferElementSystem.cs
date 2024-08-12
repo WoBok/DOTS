@@ -16,6 +16,6 @@ partial struct IBufferElementSystem : ISystem
         m_BufferElementEntity = state.EntityManager.CreateEntity();
         var buffer = state.EntityManager.AddBuffer<BufferElementComponent>(m_BufferElementEntity);
         buffer.Add(new BufferElementComponent { position = 0 });
-        Debug.Log($"Length: {buffer.Length}, Capacity: {buffer.Capacity}, DefaultBufferCapacityNumerator: {TypeManager.DefaultBufferCapacityNumerator}");
+        //Debug.Log($"Length: {buffer.Length}, Capacity: {buffer.Capacity}, DefaultBufferCapacityNumerator: {TypeManager.DefaultBufferCapacityNumerator}");
     }
 }
