@@ -42,7 +42,7 @@ public class TestEntityCreationAPI : MonoBehaviour
             // MeshBounds must be set according to the actual mesh for culling to work.
             int meshIndex = index % MeshCount;
             Ecb.SetComponent(index, e, MaterialMeshInfo.FromRenderMeshArrayIndices(0, meshIndex));
-            Ecb.SetComponent(index, e, MeshBounds[meshIndex]);
+            //Ecb.SetComponent(index, e, MeshBounds[meshIndex]);
         }
 
         public float4 ComputeColor(int index)

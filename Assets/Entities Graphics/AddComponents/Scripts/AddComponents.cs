@@ -15,11 +15,13 @@ namespace Entities_Graphics.AddComponents
         public Entity prototype;
         public int entityCount;
         public EntityCommandBuffer.ParallelWriter ecb;
+        public int meshCount;
         public void Execute(int index)
         {
             var entity = ecb.Instantiate(index, prototype);
             ecb.SetComponent(index, entity, new LocalToWorld { Value = ComputeTransform(index) });
-            //ecb.SetComponent(index, entity, new MaterialColor() { Value = ComputeColor(index) });
+            ecb.SetComponent(index, entity, new MaterialColor() { Value = ComputeColor(index) });
+            ecb.SetComponent(index, entity, MaterialMeshInfo.FromRenderMeshArrayIndices(0, index % meshCount));
         }
 
         float4x4 ComputeTransform(int index)
@@ -43,8 +45,6 @@ namespace Entities_Graphics.AddComponents
                  quaternion.identity,
                  new float3(scale)
                  );
-
-            //return float4x4.Translate(new float3(index, 0, 0));
         }
         float4 ComputeColor(int index)
         {
@@ -77,7 +77,7 @@ namespace Entities_Graphics.AddComponents
                 MaterialMeshInfo.FromRenderMeshArrayIndices(0, 1)//更改下标，尝试查看变化
                 );
 
-            entityManager.AddComponentData(prototype, new LocalToWorld());
+            entityManager.AddComponentData(prototype, new MaterialColor());
 
             var ecb = new EntityCommandBuffer(Allocator.TempJob);
 
@@ -85,7 +85,8 @@ namespace Entities_Graphics.AddComponents
             {
                 prototype = prototype,
                 ecb = ecb.AsParallelWriter(),
-                entityCount = entityCount
+                entityCount = entityCount,
+                meshCount = meshes.Length
             };
 
             var spawnHandle = spawnJob.Schedule(entityCount, 128);
