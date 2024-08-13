@@ -9,8 +9,8 @@ namespace Entities_Graphics.Lesson01
         [BurstCompile]
         public void OnUpdate(ref SystemState state)
         {
-            var job = new WaveJob { elapsedTime = (float)SystemAPI.Time.ElapsedTime };
-            job.ScheduleParallel();
+            //var job = new WaveJob { elapsedTime = (float)SystemAPI.Time.ElapsedTime };
+            //job.ScheduleParallel();
         }
     }
 }
