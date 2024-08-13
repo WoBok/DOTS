@@ -62,7 +62,6 @@ namespace MaterialOverrides
         {
 
         }
-
         [BurstCompile]
         public void OnStartRunning(ref SystemState state)
         {
@@ -71,11 +70,11 @@ namespace MaterialOverrides
             var comData = new RequestEntityPrefabLoaded { Prefab = prefabReference.prefabReference };
             state.EntityManager.AddComponentData(prefabReferenceComponentEntity, comData);
         }
-
+  
         [BurstCompile]
         public void OnStopRunning(ref SystemState state)
         {
 
         }
-    }
+  }
 }
