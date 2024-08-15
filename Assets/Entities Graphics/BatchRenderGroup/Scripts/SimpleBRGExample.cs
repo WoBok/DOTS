@@ -7,10 +7,17 @@ namespace Entities_Graphics.BatchRrenderGroup
 {
     public class SimpleBRGExample : MonoBehaviour
     {
+        public Mesh mesh;
+        public Material material;
+
         BatchRendererGroup m_BRG;
+        BatchMeshID m_BatchMeshID;
+        BatchMaterialID m_BatchMaterialID;
         void Start()
         {
             m_BRG = new BatchRendererGroup(OnPerformCulling, IntPtr.Zero);
+            m_BatchMeshID = m_BRG.RegisterMesh(mesh);
+            m_BatchMaterialID = m_BRG.RegisterMaterial(material);
         }
         void OnDisable()
         {
